@@ -40,4 +40,13 @@ public class Tool implements Serializable {
     public void setType(ToolType type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "Tool{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type=" + type +
+                '}';
+    }
 }

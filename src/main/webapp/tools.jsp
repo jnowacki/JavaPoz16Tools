@@ -4,9 +4,9 @@
 <%--JSTL jest włączony--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-<style>
-</style>
+<head>
+</head>
 <body>
-Hello world!
+${requestScope.tools}
 </body>
 </html>
