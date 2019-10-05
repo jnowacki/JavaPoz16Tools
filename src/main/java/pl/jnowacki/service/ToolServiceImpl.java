@@ -18,5 +18,17 @@ public class ToolServiceImpl implements ToolService {
     @Override
     public void toggleAvailability(Long id) {
 
+//        for(Tool tool: toolDao.getAll()) {
+//            if (tool.getId().equals(id)) {
+//                tool.setAvailable(!tool.isAvailable());
+//
+//                return;
+//            }
+//        }
+
+        toolDao.getAll().stream()
+                .filter(tool -> id.equals(tool.getId()))
+                .findAny()
+                .ifPresent(tool -> tool.setAvailable(!tool.isAvailable()));
     }
 }
