@@ -14,4 +14,9 @@ public class ToolServiceImpl implements ToolService {
     public List<Tool> getAll() {
         return toolDao.getAll();
     }
+
+    @Override
+    public void toggleAvailability(Long id) {
+
+    }
 }

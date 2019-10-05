@@ -13,11 +13,11 @@ public class ToolDaoImpl implements ToolDao {
 
     public ToolDaoImpl() {
         tools = Arrays.asList(
-                new Tool(1L, "Czerwony mlotek", ToolType.HAMMER),
-                new Tool(2L, "Stara pila", ToolType.SAW),
-                new Tool(3L, "Srubokret", ToolType.SONIC_SCREWDRIVER),
-                new Tool(4L, "Mlot na niewiernych", ToolType.HAMMER),
-                new Tool(18L, "Pila tango", ToolType.SAW)
+                new Tool(1L, "Czerwony mlotek", ToolType.HAMMER, true),
+                new Tool(2L, "Stara pila", ToolType.SAW, true),
+                new Tool(3L, "Srubokret", ToolType.SONIC_SCREWDRIVER, false),
+                new Tool(4L, "Mlot na niewiernych", ToolType.HAMMER, true),
+                new Tool(18L, "Pila tango", ToolType.SAW, false)
         );
     }
 

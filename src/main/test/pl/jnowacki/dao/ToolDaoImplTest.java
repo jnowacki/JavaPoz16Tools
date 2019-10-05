@@ -33,4 +33,22 @@ public class ToolDaoImplTest {
         //then
         assertSame(tools1, tools2);
     }
+
+    @Test
+    public void trenary() {
+        boolean valueTrue = true;
+        boolean valueFalse = false;
+
+        int valueInt = 5;
+
+        String result = valueInt > 5 ? "wieksze" : "mniejsze lub rowne";
+
+        //to samo, co:
+
+        if (valueInt > 5) {
+            result = "wieksze";
+        } else {
+            result = "mniejsze lub rowne";
+        }
+    }
 }

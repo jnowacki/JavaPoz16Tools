@@ -1,3 +1,15 @@
-body {
-    background-color: #e8ffe6;
+table, th, td {
+    border: 1px solid black;
+}
+
+form {
+    margin: 0;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
 }
