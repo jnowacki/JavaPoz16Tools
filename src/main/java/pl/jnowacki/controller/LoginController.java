@@ -30,8 +30,10 @@ public class LoginController extends HttpServlet {
             case "login":
                 login(req, resp);
                 break;
+            case "logout":
             default:
-
+                req.getSession().invalidate();
+                resp.sendRedirect(req.getContextPath() + "/login");
         }
 
 
