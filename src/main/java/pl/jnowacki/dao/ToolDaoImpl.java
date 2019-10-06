@@ -25,4 +25,13 @@ public class ToolDaoImpl implements ToolDao {
     public List<Tool> getAll() {
         return tools;
     }
+
+    @Override
+    public void setAvailability(Long id, boolean isAvailable) {
+
+        tools.stream()
+                .filter(tool -> id.equals(tool.getId()))
+                .findAny()
+                .ifPresent(tool -> tool.setAvailable(isAvailable));
+    }
 }
