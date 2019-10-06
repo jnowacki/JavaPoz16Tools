@@ -13,3 +13,7 @@ form {
 .green {
     background-color: green;
 }
+
+.error-message {
+    color: red;
+}
