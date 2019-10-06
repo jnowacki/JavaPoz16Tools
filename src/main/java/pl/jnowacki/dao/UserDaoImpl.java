@@ -6,6 +6,6 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User getUser(String userLogin) {
-        //mock: user z podaną nazwą i hasłem "asd" lub podobnym
+        return new User(1L, userLogin, "asd");
     }
 }

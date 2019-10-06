@@ -21,7 +21,9 @@ public class LoginController extends HttpServlet {
         String userName = req.getParameter("username");
         String password = req.getParameter("password");
 
-        if (StringUtils.isNotEmpty(userName.trim()) && StringUtils.isNotEmpty(password.trim())){
+        if (StringUtils.isNotEmpty(userName.trim()) &&
+                StringUtils.isNotEmpty(password.trim()) &&
+                //sprawdzenie w servisie){
             req.getSession().setAttribute("username", userName);
             resp.sendRedirect(getServletContext().getContextPath());
         } else {
