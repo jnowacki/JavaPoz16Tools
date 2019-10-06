@@ -12,6 +12,7 @@
 <form method="post">
     Login: <input type="text" name="username"> <br/>
     Password: <input type="text" name="password"> <br/>
+    <input type="hidden" name="action" value="login">
     <input type="submit" value="Log in">
 </form>
 <br/>

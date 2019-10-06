@@ -9,6 +9,11 @@
 </head>
 <body>
 
+<form action="${pageContext.request.contextPath}/login" method="post">
+    <input type="hidden" name="action" value="logout">
+    <input type="submit" value="Log out">
+</form>
+
 <table>
     <tr>
         <td>Id</td>

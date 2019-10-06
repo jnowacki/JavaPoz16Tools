@@ -23,12 +23,27 @@ public class LoginController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String action = req.getParameter("action");
+
+        switch (action) {
+            case "login":
+                login(req, resp);
+                break;
+            default:
+
+        }
+
+
+    }
+
+    private void login(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         String userName = req.getParameter("username");
         String password = req.getParameter("password");
 
         if (StringUtils.isNotEmpty(userName.trim()) &&
                 StringUtils.isNotEmpty(password.trim()) &&
-                userService.isUserValid(userName, password)){
+                userService.isUserValid(userName, password)) {
 
             req.getSession().setAttribute("username", userName);
             resp.sendRedirect(getServletContext().getContextPath());
