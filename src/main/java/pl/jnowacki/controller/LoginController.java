@@ -1,6 +1,8 @@
 package pl.jnowacki.controller;
 
 import org.apache.commons.lang3.StringUtils;
+import pl.jnowacki.service.UserService;
+import pl.jnowacki.service.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +13,9 @@ import java.io.IOException;
 
 @WebServlet("/login")
 public class LoginController extends HttpServlet {
+
+    private UserService userService = new UserServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         getServletContext().getRequestDispatcher("/login.jsp").forward(req, resp);
@@ -23,7 +28,8 @@ public class LoginController extends HttpServlet {
 
         if (StringUtils.isNotEmpty(userName.trim()) &&
                 StringUtils.isNotEmpty(password.trim()) &&
-                //sprawdzenie w servisie){
+                userService.isUserValid(userName, password)){
+
             req.getSession().setAttribute("username", userName);
             resp.sendRedirect(getServletContext().getContextPath());
         } else {
