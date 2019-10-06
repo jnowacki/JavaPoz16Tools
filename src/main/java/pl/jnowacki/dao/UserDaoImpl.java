@@ -1,7 +1,5 @@
 package pl.jnowacki.dao;
 
-import pl.jnowacki.model.Tool;
-import pl.jnowacki.model.ToolType;
 import pl.jnowacki.model.User;
 import pl.jnowacki.util.DbConnection;
 
