@@ -25,6 +25,7 @@
             <td class="${tool.available ? 'green' : 'red'}"></td>
             <td>
                 <form method="post">
+                    <input type="hidden" name="toolAvailability" value="${!tool.available}">
                     <input type="hidden" name="toolId" value="${tool.id}">
                     <input type="submit" value="Toggle">
                 </form>
