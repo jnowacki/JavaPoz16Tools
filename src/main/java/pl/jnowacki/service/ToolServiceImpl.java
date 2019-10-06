@@ -16,7 +16,7 @@ public class ToolServiceImpl implements ToolService {
     }
 
     @Override
-    public void toggleAvailability(Long id) {
+    public void setAvailability(Long id, boolean isAvailable) {
 
 //        for(Tool tool: toolDao.getAll()) {
 //            if (tool.getId().equals(id)) {

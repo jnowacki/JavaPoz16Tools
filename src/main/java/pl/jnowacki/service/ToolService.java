@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface ToolService {
     List<Tool> getAll();
-    void toggleAvailability(Long id);
+    void setAvailability(Long id, boolean isAvailable);
 }

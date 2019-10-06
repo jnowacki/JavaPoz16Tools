@@ -26,7 +26,7 @@ public class ToolController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         Long param = Long.valueOf(req.getParameter("toolId"));
-        toolService.toggleAvailability(param);
+        toolService.setAvailability(param);
 
         resp.sendRedirect(req.getContextPath());
     }
