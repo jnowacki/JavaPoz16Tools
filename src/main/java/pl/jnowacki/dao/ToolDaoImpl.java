@@ -44,5 +44,20 @@ public class ToolDaoImpl implements ToolDao {
 
     @Override
     public void setAvailability(Long id, boolean isAvailable) {
+
+        String updateSQL = "UPDATE tools SET available = ? WHERE id = ?";
+
+        try (Connection dbConnection = DbConnection.getDBConnection();
+             PreparedStatement preparedStatement = dbConnection.prepareStatement(updateSQL)) {
+
+            preparedStatement.setBoolean(1, isAvailable);
+            preparedStatement.setLong(2, id);
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 }
