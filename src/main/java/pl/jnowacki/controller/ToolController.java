@@ -30,6 +30,6 @@ public class ToolController extends HttpServlet {
 
         toolService.setAvailability(id, isAvailable);
 
-        resp.sendRedirect(req.getContextPath());
+        resp.sendRedirect(req.getContextPath() + "/");
     }
 }

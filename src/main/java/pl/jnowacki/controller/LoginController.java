@@ -48,7 +48,7 @@ public class LoginController extends HttpServlet {
                 userService.isUserValid(userName, password)) {
 
             req.getSession().setAttribute("username", userName);
-            resp.sendRedirect(getServletContext().getContextPath());
+            resp.sendRedirect(getServletContext().getContextPath() + "/");
         } else {
             req.setAttribute("error", true);
             getServletContext().getRequestDispatcher("/login.jsp").forward(req, resp);
